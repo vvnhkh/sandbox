@@ -1,7 +1,7 @@
 import random
 print("Welcome to the Dice Simulator!\n")
 
-# User Input
+# user input and feedback intended to prevent errors
 error_check = 0
 while error_check == 0:
 	min = int(raw_input("Input minimum number:\n"))
@@ -19,7 +19,7 @@ while error_check == 0:
 # actually rolling dice
 ans = "y"
 while ans == "y":
-	i = 0
+	i = 0 # resets for future loops in case user wishes to roll again
 	def roll_dice():
 		for i in range(dicenumber):
 			yield random.randint(min, max)
@@ -27,4 +27,4 @@ while ans == "y":
 			print("You rolled... %d." %(random_number))
 	ans = input("Roll again? [y/n] \n")
 	if ans == "n":
-		exit()
+		exit() # quit
